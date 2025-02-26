@@ -1,6 +1,6 @@
 /* 
-	gcc -g -c -Wall -Wshadow -Wvla -g bufalumnos.c
-	gcc -g -o bufalumnos bufalumnos.o
+	gcc -g -c -Wall -Wshadow -Wvla -g Bufferalumnos.c
+	gcc -g -o Bufferalumnos Bufferalumnos.o
 */
 #include "bufalumnos.h"
 #include <stddef.h>
@@ -9,13 +9,13 @@
 #include <stdint.h>
 #include <string.h>
 
-Buf *
+Buffer *
 bookSpace(int n)
 {
 	int i = 0;
-	Buf *b = NULL;
+	Buffer *b = NULL;
 
-	b = malloc(sizeof(Buf));
+	b = malloc(sizeof(Buffer));
 	if (!b) {
 		return NULL;
 	}
@@ -37,7 +37,7 @@ bookSpace(int n)
 
 //return 0 if everything ok, 1 if no sàcw for the student
 int
-add(Buf *b, Student *s)
+add(Buffer *b, Student *s)
 {
 	int i = 0;
 
@@ -51,7 +51,7 @@ add(Buf *b, Student *s)
 }
 
 int
-print(Buf *b)
+print(Buffer *b)
 {
 	int i = 0;
 
@@ -66,7 +66,7 @@ print(Buf *b)
 }
 
 int
-freeBuf(Buf *b)
+freeBuffer(Buffer *b)
 {
 	int i = 0;
 
@@ -86,7 +86,7 @@ freeBuf(Buf *b)
 }
 
 int
-delStudent(Buf *b, char *name, char *surname)
+delStudent(Buffer *b, char *name, char *surname)
 {
 	Student *temp;
 	int i = 0;
@@ -107,12 +107,12 @@ delStudent(Buf *b, char *name, char *surname)
 }
 
 Student *
-extractHigherMark(Buf *b)
+extractHigherMark(Buffer *b)
 {
 	int tempMark = -1;
 	int i = 0;
 	int temPos = 0;
-	int empty = 1;		//works as a bool to check if buffer is empty
+	int empty = 1;		//works as a bool to check if Bufferfer is empty
 	Student *temp;
 
 	for (i = 0; i < b->size; i++) {
@@ -136,12 +136,12 @@ extractHigherMark(Buf *b)
 }
 
 Student *
-extractLowerMark(Buf *b)
+extractLowerMark(Buffer *b)
 {
 	int tempMark = 11;
 	int i = 0;
 	int temPos = 0;
-	int empty = 1;		//works as a bool to check if buffer is empty
+	int empty = 1;		//works as a bool to check if Bufferfer is empty
 	Student *temp;
 
 	for (i = 0; i < b->size; i++) {
@@ -162,7 +162,7 @@ extractLowerMark(Buf *b)
 }
 
 Student *
-extractStudent(Buf *b, char *name, char *surname)
+extractStudent(Buffer *b, char *name, char *surname)
 {
 	int i = 0;
 	Student *temp;

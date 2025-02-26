@@ -10,18 +10,18 @@ struct Student {
 
 typedef struct Student Student;
 
-struct Buf {
+struct Buffer {
 	Student **arr;
 	int size;
 };
 
-typedef struct Buf Buf;
+typedef struct Buffer Buffer;
 
-Buf *bookSpace(int);
-int add(Buf *, Student *);
-int print(Buf *);
-int freeBuf(Buf *);
-int delStudent(Buf *, char *, char *);
-Student *extractHigherMark(Buf *);
-Student *extractLowerMark(Buf *);
-Student *extractStudent(Buf *, char *, char *);
+Buffer *bookSpace(int);
+int add(Buffer *, Student *);
+int print(Buffer *);
+int freeBuffer(Buffer *);
+int delStudent(Buffer *, char *, char *);
+Student *extractHigherMark(Buffer *);
+Student *extractLowerMark(Buffer *);
+Student *extractStudent(Buffer *, char *, char *);

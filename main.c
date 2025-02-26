@@ -17,7 +17,7 @@ int
 main(int argc, char *argv[])
 {
 	//Local variables
-	Buf *b = NULL;
+	Buffer *b = NULL;
 	int i = 0;
 	float mark = 0;
 	int status = 0;
@@ -28,7 +28,7 @@ main(int argc, char *argv[])
 	b = bookSpace(30);
 	if (b == NULL) {
 		fprintf(stderr,
-			"Error: No se pudo asignar memoria para un buffer.\n");
+			"Error: No se pudo asignar memoria para un Buffer.\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -85,7 +85,7 @@ main(int argc, char *argv[])
 		status = add(b, s);
 		if (status == 1) {
 			fprintf(stderr,
-				"Error: Tamaño de buffer demassiado pequeño.\n");
+				"Error: Tamaño de Buffer demassiado pequeño.\n");
 			exit(EXIT_FAILURE);
 
 		}
@@ -115,7 +115,7 @@ main(int argc, char *argv[])
 	free(lower);
 	free(higher);
 
-	freeBuf(b);
+	freeBuffer(b);
 
 	exit(EXIT_SUCCESS);
 
